@@ -1,0 +1,10 @@
+name: cs665final
+dependencies:
+  - numpy
+  - tensorflow
+  - pytorch
+  - ipykernel
+  - pillow
+  - opencv
+  - matplotlib
+  - pandas
