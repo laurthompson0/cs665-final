@@ -1,26 +1,36 @@
-# cs665-final
+# Crowd Social-Distancing Classification
 
-A repository of code and image data for our CS 665 Deep Learning final project.
+## CS 665 Final Project
+
+Seth Lewis, Nick Netterville, Carment Saunders, Laura Thompson  
+CS 665, Deep Learning  
+SPR 2022, 04/21/2022
+
+## Objective
+
+The goal of this project is to train a neural network on images of crowds to identify whether members of the crowd are socially distancing or not.
+
+## Setup
+
+```
+conda env create -f env.yml
+```
 
 ## TODO
 
-- Write this README
+- Write report
   - Purpose of project
-  - Information about data
+  - Information about data (see data_generation.ipynb)
     - How data was collected (what sets used)
       - Image criteria
     - How organized (ratio of pos to neg)
-    - Social dist = pos, not social dist = neg
   - Process for increasing data size via augumentation
   - Transfer learning
     - What models did we use?
   - Results
   - Further work
     - Check whether image has people in it
-- Copy and clean image data for positives
-- Clean up template with similar information to README
+- Create functions/scripts for
+  - pre-processing data
 - Create notebooks for
-  - augumenting data
   - transfer learning (each model)
-- Share this file
-- Share word doc
