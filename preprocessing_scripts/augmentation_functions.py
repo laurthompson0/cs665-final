@@ -4,7 +4,10 @@ Functions that take in an image and return an augmented version of that image
 the `augment_positives` script to make this take np arrays or any other 
 image loading framework)
 """
-
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.preprocessing.image import img_to_array
+from skimage.util import random_noise
 
 def flip(image):
     # TODO
@@ -12,7 +15,9 @@ def flip(image):
 
 
 def mirror(image):
-    # TODO
+    data = img_to_array(image)
+    mirror = np.fliplr(data)
+    image = np.uint8(mirror)
     return image
 
 
@@ -22,8 +27,9 @@ def crop(image):
 
 
 def noise(image):
-    # TODO
-    return image
+    data = img_to_array(image) / 255
+    noisy = random_noise(data)
+    return noisy
 
 
 AUGMENTATION_FUNCTIONS = {
