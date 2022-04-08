@@ -11,8 +11,6 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.image import img_to_array
 from skimage.util import random_noise
 
-DEBUG = False
-
 def flip(image):
     # TODO
     return image
@@ -49,7 +47,6 @@ def crop(image, crop_percent = 0.7, rand_override=None):
         # crop from middle
         image = image.crop(((width-x)/2, (height-y)/2, (width+x)/2, (height+y)/2))
 
-    if DEBUG: image.show()
     return image
 
 
@@ -76,7 +73,6 @@ def main():
     img_path: system path to image
     """
     if len(sys.argv) > 2:
-        global DEBUG; DEBUG = True
         try:
             funcIdx = sys.argv.index("-f")
         except ValueError:
@@ -96,6 +92,7 @@ def main():
             sys.exit('Image file required. -i <path>')
         
         img = Image.open(sys.argv[imgIdx])
-        AUGMENTATION_FUNCTIONS[func](img)
+        img_edited = AUGMENTATION_FUNCTIONS[func](img)
+        img_edited.show()
 
 if __name__ == "__main__": import sys; main()
