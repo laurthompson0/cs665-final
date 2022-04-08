@@ -2,7 +2,7 @@
 
 ## CS 665 Final Project
 
-Seth Lewis, Nick Netterville, Carment Saunders, Laura Thompson  
+Seth Lewis, Nick Netterville, Carmen Saunders, Laura Thompson  
 CS 665, Deep Learning  
 SPR 2022, 04/21/2022
 
