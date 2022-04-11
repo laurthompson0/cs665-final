@@ -8,4 +8,4 @@ dependencies:
   - opencv
   - matplotlib
   - pandas
-  - skimage
+  - scikit-image
