@@ -19,7 +19,7 @@ from tensorflow.keras.preprocessing.image import load_img, save_img
 
 
 def augment(
-    filenames: list[str],
+    filenames: list,
     old_dir: str,
     new_dir: str,
     augmentation_type: str,
