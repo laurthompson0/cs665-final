@@ -11,8 +11,14 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.image import img_to_array
 from skimage.util import random_noise
 
-def flip(image):
-    # TODO
+def brighten(image):
+    data = img_to_array(image) / 255
+    image = data * 1.5
+    return image
+
+def darken(image):
+    data = img_to_array(image) / 255
+    image = data * 0.5
     return image
 
 
@@ -57,7 +63,8 @@ def noise(image):
 
 
 AUGMENTATION_FUNCTIONS = {
-    "flip": flip,
+    "brighten": brighten,
+    "darken": darken,
     "mirror": mirror,
     "crop": crop,
     "noise": noise,
