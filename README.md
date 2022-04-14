@@ -13,7 +13,8 @@ The goal of this project is to train a neural network on images of crowds to ide
 ## Setup
 
 ```
-conda env create -f env.yml
+conda env create
+pip install tf-keras-vis tensorflow
 ```
 
 ## TODO
