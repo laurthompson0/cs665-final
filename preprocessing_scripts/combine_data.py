@@ -149,8 +149,8 @@ def combine(dirs: list, augmentation_functions, split=0.8, shuffle_labels=True):
 
     label_list = [
         (labels_train, tempdir_train, imgdir_train),
-        (labels_test, tempdir_test, imgdir_test),
         (labels_val, tempdir_val, imgdir_val),
+        (labels_test, tempdir_test, imgdir_test),
     ]
     offset = 0
     for i, label_info in enumerate(label_list):
