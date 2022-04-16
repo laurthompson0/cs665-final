@@ -38,7 +38,7 @@ def get_negative_data(old_dir: str, new_dir: str):
     jhu_parent_dir = old_dir
     new_parent_dir = new_dir
     # sub_dirs = [["test", 100], ["train", 1000], ["val", 100]]
-    sub_dirs = [["train", 1000]]
+    sub_dirs = [["train", 800], ["test", 200], ["val", 200]]
     label_filename = "image_labels.txt"
 
     # manual removals
@@ -334,6 +334,12 @@ def get_negative_data(old_dir: str, new_dir: str):
             1566,
         ],
     }
+
+    # Clear image folder if it exists
+    new_path = f"./{new_parent_dir}"
+    rmtree(join(new_path), ignore_errors=True)
+    mkdir(join(new_path))
+
     total_img_copy = 0
     for sub_dir_data in sub_dirs:
         # Define paths
@@ -342,11 +348,6 @@ def get_negative_data(old_dir: str, new_dir: str):
         remove_list = remove.get(sub_dir)
         remove_list = [str(val).zfill(4) for val in remove_list]  # format remove list
         jhu_path = f"./{jhu_parent_dir}/{sub_dir}"
-        new_path = f"./{new_parent_dir}"
-
-        # Clear image folder if it exists
-        rmtree(join(new_path), ignore_errors=True)
-        mkdir(join(new_path))
 
         # Copy label data (except for manually removed entries)
         with open(join(jhu_path, label_filename), "r") as label_file:
