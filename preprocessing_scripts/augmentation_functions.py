@@ -99,9 +99,9 @@ def crop_darken(image):
 
 
 AUGMENTATION_FUNCTIONS = {
+    "mirror": mirror,
     "brighten": brighten,
     "darken": darken,
-    "mirror": mirror,
     "crop": crop,
     "noise": noise,
     "mirror_brighten": mirror_brighten,

@@ -10,3 +10,5 @@ dependencies:
   - pandas
   - scikit-image
   - scikit-learn
+  - tqdm
+  - ipywidgets
